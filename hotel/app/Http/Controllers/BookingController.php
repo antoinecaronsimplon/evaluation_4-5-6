@@ -7,6 +7,7 @@ use App\Room;
 use App\Customer;
 use App\Booking_statuse;
 use Illuminate\Http\Request;
+use App\Booking;
 
 class BookingController extends Controller
 {
@@ -30,5 +31,17 @@ class BookingController extends Controller
         return view('/booking', compact('bookings')); 
     }
 
-    
+    public function add(Request $request)
+    {       
+        $booking = new Booking;    //Model
+
+        $booking->room_id = request('room_id'); //NON
+        $booking->customer_id = request('id_customer'); //NON
+        $booking->booking_status_id = request('booking_status_id'); //NON
+        $booking->arrival_date = request('arrival_date'); //OK
+        $booking->departure_date = request('departure_date'); //OK
+
+        $booking -> save();      
+        return ("Réservation sauvegardé");
+    }
 }

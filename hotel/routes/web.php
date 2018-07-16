@@ -22,14 +22,4 @@ Route::get('/room/{id}', 'ListofroomsController@display_room')->name('display_ro
 Route::get('/booking/{id}', 'BookingController@show');
 Route::get('/booking/{id}', 'BookingController@statut');
 
-Route::post('/booking/{id}', function(){
-$booking = new App\Booking;
-$booking->room_id = request('room_id');
-$booking->arrival_date = request('arrival_date');
-$booking->departure_date = request('departure_date');
-$booking->customer_id = request('customer_id');
-$booking->booking_status_id = request('booking_status_id');
-$booking->save();
-
-return "Enregistrement envoyé";
-});
+Route::post('/booking', 'BookingController@add');

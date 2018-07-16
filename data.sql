@@ -1,4 +1,4 @@
-USE eval4;
+USE hoteleval;
 
 INSERT IGNORE INTO `bed_types` (`bed_type`)
 VALUES
