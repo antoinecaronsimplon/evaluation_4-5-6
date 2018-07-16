@@ -35,9 +35,9 @@ class BookingController extends Controller
     {       
         $booking = new Booking;    //Model
 
-        $booking->room_id = request('room_id'); //NON
-        $booking->customer_id = request('id_customer'); //NON
-        $booking->booking_status_id = request('booking_status_id'); //NON
+        $booking->room_id = request('room_id'); //OK
+        $booking->customer_id = request('id_customers'); //OK
+        $booking->booking_status_id = request('id_status'); //OK
         $booking->arrival_date = request('arrival_date'); //OK
         $booking->departure_date = request('departure_date'); //OK
 
